@@ -1,15 +1,17 @@
-import Image from "next/image";
-
+import { Suspense } from "react";
 import Hero from "@/components/home/Hero";
+import HomeProducts from "@/components/home/HomeProducts";
+import ProductsSkeleton from "@/components/products/ProductsSkeleton";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
 
-      <section id="সব-পণ্য" className="scroll-mt-40 py-10">
-        <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">সব পণ্য</h2>
-      </section>
+      {/* ডাটা আসা পর্যন্ত স্কেলিটন, Hero সাথে সাথে দেখা যায় */}
+      <Suspense fallback={<ProductsSkeleton />}>
+        <HomeProducts />
+      </Suspense>
     </>
   );
 }

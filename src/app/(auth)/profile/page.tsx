@@ -1,11 +1,10 @@
-import React from 'react';
+import { requireSession } from "@/lib/session";
+import ProfileView from "@/components/profile/ProfileView";
 
-const ProfilePage = () => {
-    return (
-        <div>
-            <h2>This is profile page</h2>
-        </div>
-    );
-};
+export default async function ProfilePage() {
+  // 🔒 লগইন ছাড়া এই পেজ খোলে না
+  const session = await requireSession("/profile");
+  const { name, email, image } = session.user;
 
-export default ProfilePage;
+  return <ProfileView name={name} email={email} image={image ?? null} />;
+}

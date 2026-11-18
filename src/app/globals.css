@@ -4,10 +4,19 @@
 @theme {
   --color-brand: #0b8a45;
   --color-brand-dark: #08733a;
-  --color-page: #f6faf7;
+  --color-page: #f0f5f0;   /* পেজের ব্যাকগ্রাউন্ড (ফিগমা) */
+  --color-card: #fafcfa;   /* কার্ডের রং (ফিগমা) */
 }
 
+body {
+  background: var(--color-page);
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ticker এর অ্যানিমেশন */
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
