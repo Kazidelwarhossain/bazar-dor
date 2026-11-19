@@ -10,6 +10,7 @@ export const bnDate = () =>
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Asia/Dhaka", 
   });
 
 // "kg" → "কেজি"। অচেনা unit এলে যা এসেছে তাই দেখায়
